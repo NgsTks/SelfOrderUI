@@ -1,0 +1,129 @@
+/* グラスの外観（薄い水色部分） */
+.smoothie-bg {
+    position: absolute;
+    left: var(--smoothie-left, 0);
+    top: var(--smoothie-top, 0);
+    width: 340px;
+    height: 560px;
+    background-color: #e6f9f5;
+    border-radius: 15px 15px 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    margin: 20px auto; /* 中央寄せ用 */
+}
+
+/* 液体部分 */
+.smoothie-liquid {
+    /* ★重要: 子要素（ストローやテキスト）の絶対配置・z-indexの基準になります */
+    position: relative;
+    width: 310px;
+    height: 520px;
+    border-radius: 10px 10px 85px 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--li-color);
+}
+
+/* ストロー */
+.smoothie-straw {
+    position: absolute;
+    top: -70px;
+    right: 45px;
+    width: 22px;
+    height: 600px;
+    background-color: #ffadb8;
+    transform: rotate(10deg);
+    z-index: 1; /* ★重要: 液体(0)の手前、コンテンツ(2)の奥 */
+}
+
+/* コンテンツ部分（テキスト・ボタン） */
+.smoothie-content {
+    /* ★重要: これがないと背景の裏に文字が隠れてしまいます */
+    position: relative; 
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+/* タイトル */
+.smoothie-title {
+    color: #5c5545;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0 0 30px 0;
+}
+
+/* 概要 */
+.smoothie-description {
+    color: #5c5545;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.5;
+    text-align: center;
+    white-space: pre-wrap; /* \n を実際の改行として処理する */
+    margin: 0 0 50px 0;
+}
+
+/* PUSHボタンの枠組み */
+.smoothie-push-btn {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden; /* 画像が丸く切り抜かれます */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: transform 0.1s ease;
+}
+
+.smoothie-push-btn:active {
+    transform: scale(0.95); /* 押したときのへこみアニメーション */
+}
+
+/* PUSHボタンの背景画像 */
+.smoothie-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    background-image: var(--img-url);
+}
+
+/* PUSH文字の後ろの白い半透明円 */
+.smoothie-push-overlay {
+    position: relative;
+    z-index: 2;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PUSHテキスト */
+.smoothie-push-overlay span {
+    color: #5c5545;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}

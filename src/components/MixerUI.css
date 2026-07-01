@@ -1,0 +1,17 @@
+
+.mixer-container {
+    position: absolute;
+    width: var(--mixer-width);
+    height: var(--mixer-height);
+}
+.mixer-cylinder {
+    height: 73%;
+    background-color: #e6f9f5;
+    border-radius: 100px 100px 15px 15px;
+}
+.mixer-stand {
+    margin-top: 2%;
+    height: 25%;
+    background-color: var(--mixer-stand-color);
+    border-radius: 15px 15px 65px 65px;
+}
