@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MyCustomFont'; /* サイト内で使用する名前 */
+  src: url('./assets/fonts/YDWbananaslipplus.otf') format('opentype'); /* ファイルへのパス */
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -16,6 +23,7 @@
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
+  font-family: 'MyCustomFont';
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -93,6 +101,7 @@ h2 {
 }
 p {
   margin: 0;
+  font-family: MyCustomFont, sans-serif; /* カスタムフォントを指定 */
 }
 
 code,

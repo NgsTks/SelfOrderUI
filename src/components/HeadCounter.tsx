@@ -10,13 +10,17 @@ type CounterItem = {
 interface HeadCounterProps {
     x?: number
     y?: number
+    cardWidth?: number | string
     items: [CounterItem, CounterItem, CounterItem]
 }
 
-export const HeadCounter = ({ x = 0, y = 0, items }: HeadCounterProps) => {
+export const HeadCounter = ({ x = 0, y = 0, cardWidth = 230, items }: HeadCounterProps) => {
+    const headCardWidth = typeof cardWidth === 'number' ? `${cardWidth}px` : cardWidth
+
     const style = {
-        '--head-left': `${x}px`,
+        //'--head-left': `${x}px`,
         '--head-top': `${y}px`,
+        '--head-card-width': headCardWidth,
     } as CSSProperties
 
     return (

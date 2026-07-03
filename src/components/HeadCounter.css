@@ -1,6 +1,6 @@
 .head-counter-wrap {
     position: absolute;
-    left: var(--head-left, 0px);
+    left: var(--head-left, 10%);
     top: var(--head-top, 0px);
     width: 80%;
     height: 135px;
@@ -16,7 +16,7 @@
 .head-counter-card {
     position: absolute;
     top: 24px;
-    width: 230px;
+    width: var(--head-card-width, 230px);
     height: 96px;
     border-radius: 26px;
     background: #ece8df;
