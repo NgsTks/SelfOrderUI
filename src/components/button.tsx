@@ -3,21 +3,23 @@ import "./button.css";
 
 type ButtonProps = {
     text: string;
-    x?: number;
-    y?: number;
+    width?: number;
+    height?: number;
     opacity?: number;
     backgroundColor?: string;
     iconSrc?: string;
+    iconSize?: number;
     onClick?: () => void;
 };
 
 export default function Button({
     text,
-    x = 0,
-    y = 0,
+    width = 200,
+    height = 50,
     opacity = 1,
     backgroundColor = "#d9d9d9",
     iconSrc,
+    iconSize = 90,
     onClick,
 }: ButtonProps) {
     return (
@@ -27,10 +29,12 @@ export default function Button({
             className="self-order-button"
             style={
                 {
-                    "--button-left": `${x}px`,
-                    "--button-top": `${y}px`,
+                    "--button-width": `${width}px`,
+                    "--button-height": `${height}px`,
                     "--button-opacity": opacity,
                     "--button-bg": backgroundColor,
+                    "--button-icon-width": `${iconSize}%`,
+                    "--button-icon-height": `${iconSize}%`,
                 } as React.CSSProperties
             }
         >

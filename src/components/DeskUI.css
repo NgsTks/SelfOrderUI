@@ -1,12 +1,34 @@
-.desk-side {
+:root {
+    --desk-side-height: 135px;
+}
+
+.desk-ui {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 1920px;
-    height: 135px;
+    z-index: -1;
+}
+
+.desk-side {
+    position: absolute;
+    left: 0;
+    bottom: var(--desk-side-bottom, 0px);
+    z-index: 0;
+    width: 1920px;
+    height: var(--desk-side-height);
     background-color: #9E8666;
     white-space: pre-wrap;
     line-height: 1.3;
+    display: flex;
+    justify-content: space-around;
 }
 
 .desk-top {
+    position: absolute;
+    left: 0;
+    bottom: calc(var(--desk-side-bottom, 0px) + var(--desk-side-height));
+    z-index: 1;
     width: 1920px;
     height: 275px;
     background-color: #AFA393;

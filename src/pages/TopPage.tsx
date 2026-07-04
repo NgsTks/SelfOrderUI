@@ -5,7 +5,6 @@ import { DeskUI } from '../components/DeskUI'
 import { HeadCounter } from '../components/HeadCounter'
 import imageUrlGoro from '../assets/images/zai_brube.png'
 import { MixerUI } from '../components/MixerUI'
-import Button from '../components/button'
 import { FridgeUI } from '../components/FridgeUI'
 
 const w = 1920
@@ -17,6 +16,7 @@ const smoothieIntervalX = smoothieW * 1.25
 const headCounterCardWidth = 230
 const fridgeWidth = 580
 const fridgeHeight = 366
+const deskBottom = 0
 
 export const TopPage = ({ themeColor = '#F4EED3' }) => {
     const style = { '--bg-color': themeColor } as React.CSSProperties
@@ -38,9 +38,6 @@ export const TopPage = ({ themeColor = '#F4EED3' }) => {
 
     return (
         <div className='bg' style={style}>
-            <Button text='注文履歴' x={200 + buttonOffsetX} y={h - 115} backgroundColor='#FF9A9A' onClick={() => {}} />
-            <Button text='注文確認' x={w - 200 + buttonOffsetX} y={h - 115} backgroundColor='#ACD7FF' onClick={() => {}} />
-
             <HeadCounter
                 y={0}
                 cardWidth={headCounterCardWidth}
@@ -61,7 +58,7 @@ export const TopPage = ({ themeColor = '#F4EED3' }) => {
                 imageUrl={imageUrlGoro}
                 liquidColor='#FFD7A0'
                 x={smoothieX1}
-                y={h / 2 + smoothieOffsetY}
+                y={h / 2 + smoothieOffsetY - deskBottom}
                 onPush={() => addCount(0)}
                 width={smoothieW}
                 height={smoothieH}
@@ -73,7 +70,7 @@ export const TopPage = ({ themeColor = '#F4EED3' }) => {
                 imageUrl={imageUrlGoro}
                 liquidColor='#FDFD96'
                 x={smoothieX2}
-                y={h / 2 + smoothieOffsetY + 40}
+                y={h / 2 + smoothieOffsetY + 40 - deskBottom}
                 onPush={() => addCount(1)}
                 width={smoothieW}
                 height={smoothieH}
@@ -85,18 +82,18 @@ export const TopPage = ({ themeColor = '#F4EED3' }) => {
                 imageUrl={imageUrlGoro}
                 liquidColor='#dced9b'
                 x={smoothieX3}
-                y={h / 2 + smoothieOffsetY}
+                y={h / 2 + smoothieOffsetY - deskBottom}
                 onPush={() => addCount(2)}
                 width={smoothieW}
                 height={smoothieH}
             />
 
             <div>
-                <MixerUI color={'#C8FFEA'} x={w - 100} y={-200}></MixerUI>
-                <MixerUI color={'#FFBB9E'} x={-280} y={-200}></MixerUI>
+                <MixerUI color={'#C8FFEA'} x={w - 100} y={-200 - deskBottom}></MixerUI>
+                <MixerUI color={'#FFBB9E'} x={-280} y={-200 - deskBottom}></MixerUI>
             </div>
-            <div style={{ position: 'absolute', bottom: 0, zIndex: -1 }}>
-                <DeskUI></DeskUI>
+            <div>
+                <DeskUI bottom={deskBottom}></DeskUI>
             </div>
         </div>
     )

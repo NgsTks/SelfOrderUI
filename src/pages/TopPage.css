@@ -7,4 +7,5 @@
     height: 1080px;
     background-color: var(--bg-color);
     z-index: 0;
+    overflow: hidden;
 }
