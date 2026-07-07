@@ -1,6 +1,6 @@
 import React from 'react'
 import './DeskUI.css'
-import Button from './button'
+import { Button } from './button'
 import iconHistory from '../assets/images/icon_history.svg'
 import iconCart from '../assets/images/icon_cart.svg'
 

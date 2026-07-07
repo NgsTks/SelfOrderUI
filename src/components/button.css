@@ -26,8 +26,8 @@
 }
 
 .self-order-button__img {
-    width: var(--button-icon-width, 90%);
-    height: var(--button-icon-height, 90%);
+    width: var(--button-icon-width, 80%);
+    height: var(--button-icon-height, 80%);
     object-fit: cover;
     display: block;
 }

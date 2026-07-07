@@ -12,16 +12,16 @@ type ButtonProps = {
     onClick?: () => void;
 };
 
-export default function Button({
+export const Button = ({
     text,
     width = 200,
     height = 50,
     opacity = 1,
     backgroundColor = "#d9d9d9",
     iconSrc,
-    iconSize = 90,
+    iconSize = 70,
     onClick,
-}: ButtonProps) {
+}: ButtonProps) => {
     return (
         <button
             type="button"

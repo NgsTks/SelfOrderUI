@@ -1,0 +1,50 @@
+.mixerIngredientItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    color: #665b54;
+    font-weight: 700;
+    background: rgba(156, 29, 29, 0.85);
+}
+
+.mixerIngredientItem__name {
+    flex: 1;
+    min-width: 0;
+    font-size: clamp(16px, 3.5vw, 24px);
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+.mixerIngredientItem__price {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: clamp(14px, 3vw, 20px);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.mixerIngredientItem__quantity {
+    margin-left: 4px;
+}
+
+.mixerIngredientItem__remove {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mixerIngredientItem__remove:disabled {
+    cursor: default;
+    opacity: 0.4;
+}

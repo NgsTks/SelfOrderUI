@@ -1,17 +1,87 @@
-
 .mixer-container {
     position: absolute;
-    width: var(--mixer-width);
-    height: var(--mixer-height);
+    width: var(--mixer-width, 420px);
+    height: var(--mixer-height, 760px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
+
 .mixer-cylinder {
     height: 73%;
     background-color: #e6f9f5;
     border-radius: 100px 100px 15px 15px;
+    padding: 18px 14px 22px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 0;
 }
+
+.mixer-cylinder__contents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.mixer-cylinder__contents--interactive {
+    flex-direction: column-reverse;
+}
+
+.mixer-cylinder__empty {
+    color: #8aa09a;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 18px;
+}
+
 .mixer-stand {
     margin-top: 2%;
     height: 25%;
-    background-color: var(--mixer-stand-color);
+    background-color: var(--mixer-stand-color, #E6E0C9);
     border-radius: 15px 15px 65px 65px;
+    box-sizing: border-box;
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    min-height: 0;
+}
+
+.mixer-totalBadge {
+    margin-top: 8%;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.88);
+    color: #6c645d;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.mixer-confirmButton {
+    margin-top: 10%;
+    width: min(100%, 260px);
+    border: none;
+    border-radius: 999px;
+    padding: 18px 20px;
+    background: #8be7c8;
+    color: #ffffff;
+    font-size: clamp(24px, 5vw, 42px);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.mixer-confirmButton:active {
+    filter: brightness(0.95);
 }

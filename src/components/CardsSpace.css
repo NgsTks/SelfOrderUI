@@ -1,0 +1,39 @@
+.cards-space {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 20px;
+    overflow: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    z-index: 2;
+    /* pointer-events: none; */
+}
+
+.cards-space__item {
+    flex: 0 0 auto;
+    width: min(100%, 420px);
+    max-width: 420px;
+    min-width: 0;
+    pointer-events: auto;
+}
+
+/* 既存: OsusumeCardを1行で横並び */
+.cards-space--single-row {
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    grid-auto-columns: minmax(320px, 420px);
+    align-items: center;
+}
+
+/* 新規: Cardを2行で横並び（列が増える） */
+.cards-space--double-row {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: 500px;
+    align-content: start;
+    align-items: stretch;
+    gap: 72px;
+}

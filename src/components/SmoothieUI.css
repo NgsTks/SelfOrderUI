@@ -12,6 +12,7 @@
     align-items: flex-end;
     padding-bottom: 15px;
     margin: 20px auto;
+    pointer-events: auto;
 }
 
 /* 液体部分 */
@@ -53,7 +54,7 @@
 /* タイトル */
 .smoothie-title {
     color: #5c5545;
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 800;
     letter-spacing: 3px;
     margin: 0 0 30px 0;
@@ -63,8 +64,7 @@
 .smoothie-description {
     color: #5c5545;
     font-size: 24px;
-    font-weight: 800;
-    font-family: MyCustomFont, sans-serif;
+    font-weight: 500;
     line-height: 1.5;
     text-align: center;
     white-space: pre-wrap;
@@ -125,4 +125,45 @@
     font-weight: bold;
     letter-spacing: 2px;
     font-family: sans-serif;
+}
+
+/* 波紋アニメーション */
+.smoothie-ripple {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ripple-color, #C8FFEA) 55%, white);
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.75;
+    z-index: 3;
+    pointer-events: none;
+    animation: smoothie-ripple 0.8s ease-out forwards;
+}
+
+.smoothie-ripple-motion {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-radius: 50%;
+    border: 3px solid color-mix(in srgb, var(--ripple-color, #C8FFEA) 70%, white);
+    background: transparent;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform, opacity;
+}
+
+@keyframes smoothie-ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+    }
 }
